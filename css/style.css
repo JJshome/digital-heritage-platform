@@ -116,12 +116,12 @@ nav ul li a:hover {
 
 /* 히어로 섹션 */
 #hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/hero-bg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../assets/hero-bg.jpg');
     background-size: cover;
     background-position: center;
     color: white;
     text-align: center;
-    padding: 150px 0;
+    padding: 150px 0 100px;
 }
 
 #hero h2 {
@@ -135,7 +135,17 @@ nav ul li a:hover {
     margin: 0 auto 30px;
 }
 
-/* 주요 컬렉션 섹션 */
+.patent-notice {
+    font-size: 0.9em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 주요 서비스 섹션 */
 .featured-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -156,11 +166,13 @@ nav ul li a:hover {
 
 .item-image {
     height: 200px;
-    background-color: #ddd;
+    background-color: #1a73e8;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 .item h3 {
@@ -177,101 +189,255 @@ nav ul li a:hover {
     margin: 0 20px 20px;
 }
 
-/* 가상 투어 섹션 */
-#virtual-tour {
-    background-color: #f0f7ff;
-}
-
-.tour-preview {
+/* 이용 방법 섹션 */
+.steps {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
-.tour-image {
-    height: 400px;
-    background-color: #ddd;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #999;
-}
-
-.tour-info h3 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.tour-info p {
-    margin-bottom: 30px;
-    color: #666;
-}
-
-/* 디지털 전시 섹션 */
-.exhibition-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 40px;
-}
-
-.exhibition {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+.step {
     background: white;
     border-radius: 8px;
-    overflow: hidden;
+    padding: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.exhibition-image {
-    height: 250px;
-    background-color: #ddd;
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: #1a73e8;
+    color: white;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 auto 20px;
 }
 
-.exhibition-info {
-    padding: 20px;
-}
-
-.exhibition-info h3 {
+.step h3 {
     margin-bottom: 15px;
     color: #333;
 }
 
-.exhibition-info p {
-    margin-bottom: 20px;
+.step p {
     color: #666;
 }
 
-/* 교육 자료 섹션 */
-.education-resources {
+/* 주요 기능 섹션 */
+.features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.resource {
+.feature {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.feature p {
+    color: #666;
+}
+
+/* 보안 섹션 */
+#security {
+    background-color: #f0f7ff;
+}
+
+.security-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.security-feature {
     background: white;
     border-radius: 8px;
     padding: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.resource h3 {
+.security-feature h3 {
     margin-bottom: 15px;
     color: #333;
 }
 
-.resource p {
-    margin-bottom: 20px;
+.security-feature p {
     color: #666;
+}
+
+.patent-info {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.patent-info h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.patent-info p {
+    color: #666;
+    font-style: italic;
+}
+
+/* 고객 후기 섹션 */
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.testimonial {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-content {
+    padding: 30px;
+    position: relative;
+}
+
+.testimonial-content:before {
+    content: '"';
+    font-size: 5em;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #f0f0f0;
+    z-index: 0;
+}
+
+.testimonial-content p {
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+.author-image {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+.author-info h4 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.author-info p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* 요금제 섹션 */
+.pricing-plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.plan {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.plan.featured {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 10;
+}
+
+.plan-header {
+    padding: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+}
+
+.plan-header h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.price {
+    font-size: 2em;
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.price span {
+    font-size: 0.5em;
+    font-weight: normal;
+    color: #666;
+}
+
+.plan-features {
+    padding: 30px;
+}
+
+.plan-features ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.plan-features ul li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #1a73e8;
+}
+
+.plan .btn {
+    display: block;
+    margin: 0 30px 30px;
+    text-align: center;
 }
 
 /* 푸터 스타일 */
@@ -291,6 +457,16 @@ footer {
 .footer-logo h2 {
     font-size: 1.5em;
     margin-bottom: 15px;
+}
+
+.footer-logo p {
+    margin-bottom: 15px;
+}
+
+.patent-notice {
+    font-size: 0.8em;
+    color: #aaa;
+    font-style: italic;
 }
 
 .footer-links h3,
@@ -356,21 +532,15 @@ footer {
         margin-top: 20px;
     }
 
-    .tour-preview,
-    .exhibition {
-        grid-template-columns: 1fr;
+    .plan.featured {
+        transform: none;
     }
 
-    .tour-image,
-    .exhibition-image {
-        height: 250px;
-    }
-
-    #hero {
-        padding: 100px 0;
-    }
-
-    #hero h2 {
+    .hero h2 {
         font-size: 2.2em;
+    }
+
+    .testimonials {
+        grid-template-columns: 1fr;
     }
 }
