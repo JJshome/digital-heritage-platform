@@ -1,0 +1,105 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#343a40">디지털 유산 관리 플랫폼 아키텍처</text>
+  
+  <!-- User Layer -->
+  <rect x="50" y="90" width="700" height="80" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="10" ry="10"/>
+  <text x="400" y="130" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#0d47a1">사용자 인터페이스 레이어</text>
+  
+  <!-- User Interface Components -->
+  <rect x="100" y="110" width="120" height="40" fill="#bbdefb" stroke="#2196f3" stroke-width="1" rx="5" ry="5"/>
+  <text x="160" y="135" font-family="Arial" font-size="14" text-anchor="middle" fill="#0d47a1">웹 인터페이스</text>
+  
+  <rect x="240" y="110" width="120" height="40" fill="#bbdefb" stroke="#2196f3" stroke-width="1" rx="5" ry="5"/>
+  <text x="300" y="135" font-family="Arial" font-size="14" text-anchor="middle" fill="#0d47a1">모바일 앱</text>
+  
+  <rect x="380" y="110" width="120" height="40" fill="#bbdefb" stroke="#2196f3" stroke-width="1" rx="5" ry="5"/>
+  <text x="440" y="135" font-family="Arial" font-size="14" text-anchor="middle" fill="#0d47a1">대시보드</text>
+  
+  <rect x="520" y="110" width="140" height="40" fill="#bbdefb" stroke="#2196f3" stroke-width="1" rx="5" ry="5"/>
+  <text x="590" y="135" font-family="Arial" font-size="14" text-anchor="middle" fill="#0d47a1">VR/AR 인터페이스</text>
+  
+  <!-- Application Layer -->
+  <rect x="50" y="190" width="700" height="200" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" rx="10" ry="10"/>
+  <text x="400" y="215" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#1b5e20">애플리케이션 레이어</text>
+  
+  <!-- Application Components -->
+  <rect x="100" y="230" width="150" height="70" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5" ry="5"/>
+  <text x="175" y="255" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">자산 관리 모듈</text>
+  <text x="175" y="275" font-family="Arial" font-size="12" text-anchor="middle" fill="#1b5e20">수집, 분류, 인벤토리</text>
+  
+  <rect x="270" y="230" width="150" height="70" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5" ry="5"/>
+  <text x="345" y="255" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">AI 분석 모듈</text>
+  <text x="345" y="275" font-family="Arial" font-size="12" text-anchor="middle" fill="#1b5e20">중요도 평가, 분류</text>
+  
+  <rect x="440" y="230" width="150" height="70" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5" ry="5"/>
+  <text x="515" y="255" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">상속 관리 모듈</text>
+  <text x="515" y="275" font-family="Arial" font-size="12" text-anchor="middle" fill="#1b5e20">계획 설정, 권한 관리</text>
+  
+  <rect x="100" y="310" width="150" height="70" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5" ry="5"/>
+  <text x="175" y="335" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">법적 문서 모듈</text>
+  <text x="175" y="355" font-family="Arial" font-size="12" text-anchor="middle" fill="#1b5e20">유언장, 법적 계약</text>
+  
+  <rect x="270" y="310" width="150" height="70" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5" ry="5"/>
+  <text x="345" y="335" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">계정 관리 모듈</text>
+  <text x="345" y="355" font-family="Arial" font-size="12" text-anchor="middle" fill="#1b5e20">SNS, 이메일, 금융</text>
+  
+  <rect x="440" y="310" width="150" height="70" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5" ry="5"/>
+  <text x="515" y="335" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">추모 공간 모듈</text>
+  <text x="515" y="355" font-family="Arial" font-size="12" text-anchor="middle" fill="#1b5e20">VR/AR 공간 생성</text>
+  
+  <rect x="610" y="270" width="120" height="70" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5" ry="5"/>
+  <text x="670" y="295" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1b5e20">보안 모듈</text>
+  <text x="670" y="315" font-family="Arial" font-size="12" text-anchor="middle" fill="#1b5e20">인증, 암호화</text>
+  
+  <!-- Infrastructure Layer -->
+  <rect x="50" y="410" width="700" height="150" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="10" ry="10"/>
+  <text x="400" y="435" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#e65100">인프라 레이어</text>
+  
+  <!-- Infrastructure Components -->
+  <rect x="100" y="450" width="150" height="70" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="5" ry="5"/>
+  <text x="175" y="475" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">블록체인</text>
+  <text x="175" y="495" font-family="Arial" font-size="12" text-anchor="middle" fill="#e65100">이더리움, 스마트 계약</text>
+  
+  <rect x="270" y="450" width="150" height="70" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="5" ry="5"/>
+  <text x="345" y="475" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">분산 저장소</text>
+  <text x="345" y="495" font-family="Arial" font-size="12" text-anchor="middle" fill="#e65100">IPFS, 암호화 저장</text>
+  
+  <rect x="440" y="450" width="150" height="70" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="5" ry="5"/>
+  <text x="515" y="475" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">AI 인프라</text>
+  <text x="515" y="495" font-family="Arial" font-size="12" text-anchor="middle" fill="#e65100">TensorFlow, 자연어처리</text>
+  
+  <rect x="610" y="450" width="120" height="70" fill="#ffe0b2" stroke="#ff9800" stroke-width="1" rx="5" ry="5"/>
+  <text x="670" y="475" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">클라우드</text>
+  <text x="670" y="495" font-family="Arial" font-size="12" text-anchor="middle" fill="#e65100">AWS, 엣지 컴퓨팅</text>
+  
+  <!-- Connection lines -->
+  <!-- User to App layer -->
+  <line x1="160" y1="150" x2="160" y2="230" stroke="#90a4ae" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="300" y1="150" x2="300" y2="230" stroke="#90a4ae" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="440" y1="150" x2="440" y2="230" stroke="#90a4ae" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="590" y1="150" x2="515" y2="310" stroke="#90a4ae" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- App to Infrastructure layer -->
+  <line x1="175" y1="380" x2="175" y2="450" stroke="#90a4ae" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="345" y1="380" x2="345" y2="450" stroke="#90a4ae" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="515" y1="380" x2="515" y2="450" stroke="#90a4ae" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="670" y1="340" x2="670" y2="450" stroke="#90a4ae" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Legend -->
+  <rect x="80" y="530" width="640" height="40" fill="#eceff1" stroke="#546e7a" stroke-width="1" rx="5" ry="5"/>
+  <circle cx="100" cy="550" r="8" fill="#2196f3"/>
+  <text x="120" y="555" font-family="Arial" font-size="12" fill="#37474f">사용자 레이어</text>
+  
+  <circle cx="250" cy="550" r="8" fill="#4caf50"/>
+  <text x="270" y="555" font-family="Arial" font-size="12" fill="#37474f">애플리케이션 레이어</text>
+  
+  <circle cx="420" cy="550" r="8" fill="#ff9800"/>
+  <text x="440" y="555" font-family="Arial" font-size="12" fill="#37474f">인프라 레이어</text>
+  
+  <line x1="550" y1="550" x2="580" y2="550" stroke="#90a4ae" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="600" y="555" font-family="Arial" font-size="12" fill="#37474f">통신 채널</text>
+</svg>
