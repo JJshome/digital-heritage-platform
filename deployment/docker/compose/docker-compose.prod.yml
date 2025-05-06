@@ -1,0 +1,285 @@
+version: '3.8'
+
+# ==========================================
+# Docker Compose for Digital Heritage Management Platform Production Environment
+# This technical content is based on patented technology filed by Ucaretron Inc.
+# ==========================================
+
+services:
+  # ==========================================
+  # Backend API Service
+  # ==========================================
+  api:
+    build:
+      context: ../../..
+      dockerfile: deployment/docker/Dockerfile
+      target: production
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/digitalheritage
+      - JWT_SECRET=${JWT_SECRET}
+      - IPFS_HOST=ipfs
+      - IPFS_PORT=5001
+      - IPFS_PROTOCOL=http
+      - AI_SERVICE_URL=http://ai-service:5000
+      - BLOCKCHAIN_PROVIDER_URL=${BLOCKCHAIN_PROVIDER_URL}
+      - LOG_LEVEL=info
+    depends_on:
+      - mongo
+      - ipfs
+      - ai-service
+      - redis
+    networks:
+      - digitalheritage-network
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+      update_config:
+        parallelism: 1
+        delay: 10s
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ==========================================
+  # Nginx Web Server and Reverse Proxy
+  # ==========================================
+  web:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../nginx/conf.d:/etc/nginx/conf.d:ro
+      - ../nginx/ssl:/etc/nginx/ssl:ro
+      - static-content:/var/www/html
+    depends_on:
+      - api
+    networks:
+      - digitalheritage-network
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+  # ==========================================
+  # MongoDB Database
+  # ==========================================
+  mongo:
+    image: mongo:5.0
+    volumes:
+      - mongo-data:/data/db
+      - ../mongodb/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+      - ../mongodb/mongod.conf:/etc/mongod.conf:ro
+    command: ["--config", "/etc/mongod.conf"]
+    networks:
+      - digitalheritage-network
+    deploy:
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ==========================================
+  # MongoDB Backup Service
+  # ==========================================
+  mongo-backup:
+    image: mongo:5.0
+    volumes:
+      - ../mongodb/backup:/backup
+      - ../mongodb/scripts:/scripts
+    command: ["/scripts/backup.sh"]
+    depends_on:
+      - mongo
+    networks:
+      - digitalheritage-network
+    deploy:
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints: [node.role == manager]
+
+  # ==========================================
+  # Redis for Caching
+  # ==========================================
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD}"]
+    volumes:
+      - redis-data:/data
+    networks:
+      - digitalheritage-network
+    deploy:
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+  # ==========================================
+  # IPFS for Distributed Storage
+  # ==========================================
+  ipfs:
+    image: ipfs/kubo:latest
+    volumes:
+      - ipfs-data:/data/ipfs
+      - ../ipfs/start_ipfs.sh:/usr/local/bin/start_ipfs:ro
+    entrypoint: ["/usr/local/bin/start_ipfs"]
+    networks:
+      - digitalheritage-network
+    deploy:
+      restart_policy:
+        condition: on-failure
+      resources:
+        limits:
+          cpus: '1'
+          memory: 1G
+
+  # ==========================================
+  # AI Service for Asset Analysis
+  # ==========================================
+  ai-service:
+    build:
+      context: ../../..
+      dockerfile: deployment/docker/Dockerfile
+      target: ai-inference
+    volumes:
+      - ai-models:/app/ai/models/saved
+    environment:
+      - MODEL_PATH=/app/ai/models/saved
+      - LOG_LEVEL=info
+      - TZ=Asia/Seoul
+    networks:
+      - digitalheritage-network
+    deploy:
+      replicas: 2
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ==========================================
+  # Monitoring - Prometheus
+  # ==========================================
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ../prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    networks:
+      - digitalheritage-network
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+  # ==========================================
+  # Monitoring - Grafana
+  # ==========================================
+  grafana:
+    image: grafana/grafana:latest
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ../grafana/provisioning:/etc/grafana/provisioning:ro
+      - ../grafana/dashboards:/var/lib/grafana/dashboards:ro
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    depends_on:
+      - prometheus
+    networks:
+      - digitalheritage-network
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+
+  # ==========================================
+  # Monitoring - Node Exporter
+  # ==========================================
+  node-exporter:
+    image: prom/node-exporter:latest
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+    networks:
+      - digitalheritage-network
+    deploy:
+      mode: global
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: 128M
+
+volumes:
+  mongo-data:
+    driver: local
+    driver_opts:
+      type: none
+      device: /data/digitalheritage/mongo
+      o: bind
+  redis-data:
+  ipfs-data:
+  ai-models:
+  static-content:
+  prometheus-data:
+  grafana-data:
+
+networks:
+  digitalheritage-network:
+    driver: overlay
+    attachable: true
+    driver_opts:
+      encrypted: "true"
