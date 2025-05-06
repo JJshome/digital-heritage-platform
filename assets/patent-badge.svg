@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      @keyframes pulse {
+        0% { opacity: 0.7; transform: scale(0.98); }
+        50% { opacity: 1; transform: scale(1.02); }
+        100% { opacity: 0.7; transform: scale(0.98); }
+      }
+      
+      @keyframes shimmer {
+        0% { opacity: 0.3; }
+        50% { opacity: 0.7; }
+        100% { opacity: 0.3; }
+      }
+      
+      .outer-circle {
+        animation: rotate 30s linear infinite;
+      }
+      
+      .inner-circle {
+        animation: pulse 3s ease-in-out infinite;
+      }
+      
+      .star {
+        animation: shimmer 2s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+  
+  <!-- Outer Rotating Border -->
+  <g class="outer-circle">
+    <circle cx="100" cy="100" r="95" fill="none" stroke="#1a73e8" stroke-width="2" stroke-dasharray="5,3" />
+    <circle cx="100" cy="100" r="85" fill="none" stroke="#1a73e8" stroke-width="1" />
+  </g>
+  
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="80" fill="#f0f7ff" stroke="#1a73e8" stroke-width="3" class="inner-circle" />
+  
+  <!-- Decorative Stars -->
+  <g class="star">
+    <path d="M30,100 L35,90 L40,100 L30,95 L40,95 Z" fill="#1a73e8" />
+    <path d="M170,100 L175,90 L180,100 L170,95 L180,95 Z" fill="#1a73e8" />
+    <path d="M100,30 L105,20 L110,30 L100,25 L110,25 Z" fill="#1a73e8" />
+    <path d="M100,170 L105,160 L110,170 L100,165 L110,165 Z" fill="#1a73e8" />
+  </g>
+  
+  <!-- Main Text -->
+  <text x="100" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a73e8" text-anchor="middle">PATENT</text>
+  <text x="100" y="90" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1a73e8" text-anchor="middle">PENDING</text>
+  
+  <!-- Company Name -->
+  <text x="100" y="120" font-family="Arial, sans-serif" font-size="12" fill="#333" text-anchor="middle">Ucaretron Inc.</text>
+  
+  <!-- Patent Info -->
+  <text x="100" y="140" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">AI and Blockchain-based</text>
+  <text x="100" y="155" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">Digital Heritage Management</text>
+  <text x="100" y="170" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">Technology</text>
+</svg>
