@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1a73e8;
+      }
+      .cls-2 {
+        fill: #4285f4;
+      }
+      .cls-3 {
+        fill: #34a853;
+      }
+      .cls-4 {
+        fill: #fbbc05;
+      }
+      .cls-5 {
+        fill: #ea4335;
+      }
+      .cls-6 {
+        fill: none;
+        stroke: #1a73e8;
+        stroke-width: 3;
+        stroke-dasharray: 12 6;
+        stroke-linecap: round;
+      }
+      
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      @keyframes pulse {
+        0% { opacity: 0.7; transform: scale(0.95); }
+        50% { opacity: 1; transform: scale(1.05); }
+        100% { opacity: 0.7; transform: scale(0.95); }
+      }
+      
+      @keyframes dashOffset {
+        from { stroke-dashoffset: 0; }
+        to { stroke-dashoffset: 36; }
+      }
+      
+      #outer-circle {
+        animation: rotate 10s linear infinite;
+      }
+      
+      #inner-elements {
+        animation: pulse 3s ease-in-out infinite;
+      }
+      
+      .circle-dash {
+        animation: dashOffset 4s linear infinite;
+      }
+      
+      .shield-elements {
+        transform-origin: center;
+        animation: pulse 2s ease-in-out infinite alternate;
+      }
+    </style>
+  </defs>
+  
+  <!-- Main Background Circle -->
+  <circle cx="150" cy="150" r="145" fill="#f9f9f9" stroke="#1a73e8" stroke-width="2" />
+  
+  <!-- Outer Circle with Animation -->
+  <g id="outer-circle">
+    <circle class="circle-dash" cx="150" cy="150" r="125" fill="none" stroke="#1a73e8" stroke-width="3" stroke-dasharray="12 6" />
+    <circle cx="150" cy="150" r="110" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1" />
+  </g>
+  
+  <!-- Inner Elements -->
+  <g id="inner-elements">
+    <!-- Shield Base -->
+    <path class="cls-1" d="M150,70 L200,95 V145 C200,170 180,190 150,210 C120,190 100,170 100,145 V95 L150,70z" opacity="0.9" />
+    
+    <!-- Shield Elements -->
+    <g class="shield-elements">
+      <!-- Binary Data Visualization -->
+      <rect x="120" y="130" width="10" height="5" fill="white" opacity="0.8" />
+      <rect x="135" y="130" width="10" height="5" fill="white" opacity="0.8" />
+      <rect x="150" y="130" width="10" height="5" fill="white" opacity="0.8" />
+      <rect x="165" y="130" width="10" height="5" fill="white" opacity="0.8" />
+      <rect x="120" y="140" width="10" height="5" fill="white" opacity="0.8" />
+      <rect x="135" y="140" width="10" height="5" fill="white" opacity="0.8" />
+      <rect x="150" y="140" width="10" height="5" fill="white" opacity="0.8" />
+      <rect x="165" y="140" width="10" height="5" fill="white" opacity="0.8" />
+      
+      <!-- Lock Symbol -->
+      <rect x="135" y="110" width="30" height="20" rx="5" fill="white" opacity="0.9" />
+      <rect x="145" y="100" width="10" height="15" rx="3" fill="white" opacity="0.9" />
+    </g>
+    
+    <!-- Blockchain Chain Representation -->
+    <circle cx="130" y="175" r="10" class="cls-2" />
+    <circle cx="150" y="175" r="10" class="cls-3" />
+    <circle cx="170" y="175" r="10" class="cls-4" />
+    <circle cx="190" y="175" r="10" class="cls-5" opacity="0.7" />
+    <line x1="140" y1="175" x2="140" y2="175" stroke="white" stroke-width="2" />
+    <line x1="160" y1="175" x2="160" y2="175" stroke="white" stroke-width="2" />
+    <line x1="180" y1="175" x2="180" y2="175" stroke="white" stroke-width="2" />
+  </g>
+  
+  <!-- Text Elements -->
+  <text x="150" y="240" font-family="Arial, sans-serif" font-size="14" fill="#1a73e8" text-anchor="middle" font-weight="bold">DIGITAL HERITAGE</text>
+  <text x="150" y="260" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">MANAGEMENT PLATFORM</text>
+  
+  <!-- Patent Badge -->
+  <g transform="translate(215, 70)">
+    <circle cx="0" cy="0" r="20" fill="#1a73e8" opacity="0.9" />
+    <text x="0" y="4" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle" font-weight="bold">PAT.</text>
+  </g>
+</svg>
