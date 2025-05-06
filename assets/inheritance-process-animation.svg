@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="300" viewBox="0 0 600 300">
+  <defs>
+    <style>
+      .bg-rect {
+        fill: #f9f9f9;
+        stroke: #eee;
+        stroke-width: 1;
+      }
+      
+      .step-circle {
+        fill: #1a73e8;
+        stroke: none;
+      }
+      
+      .step-number {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        fill: white;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+      
+      .step-title {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        fill: #333;
+        text-anchor: middle;
+      }
+      
+      .step-desc {
+        font-family: Arial, sans-serif;
+        font-size: 9px;
+        fill: #666;
+        text-anchor: middle;
+      }
+      
+      .icon-box {
+        fill: white;
+        stroke: #1a73e8;
+        stroke-width: 1;
+        filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
+      }
+      
+      .connector-line {
+        stroke: #1a73e8;
+        stroke-width: 2;
+        stroke-dasharray: 4 2;
+        marker-end: url(#arrowhead);
+      }
+      
+      .title-text {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        fill: #333;
+        text-anchor: middle;
+      }
+      
+      .patent-text {
+        font-family: Arial, sans-serif;
+        font-size: 8px;
+        font-style: italic;
+        fill: #666;
+        text-anchor: middle;
+      }
+      
+      @keyframes pulse {
+        0% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.1); opacity: 1; }
+        100% { transform: scale(1); opacity: 0.8; }
+      }
+      
+      @keyframes dash {
+        from { stroke-dashoffset: 12; }
+        to { stroke-dashoffset: 0; }
+      }
+      
+      .pulse-animation {
+        animation: pulse 2s ease-in-out infinite;
+      }
+      
+      .line-animation {
+        animation: dash 1.5s linear infinite;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      .step1 { animation: fadeIn 0.5s ease-in forwards; }
+      .step2 { animation: fadeIn 0.5s ease-in 0.5s forwards; opacity: 0; }
+      .step3 { animation: fadeIn 0.5s ease-in 1s forwards; opacity: 0; }
+      .step4 { animation: fadeIn 0.5s ease-in 1.5s forwards; opacity: 0; }
+      .step5 { animation: fadeIn 0.5s ease-in 2s forwards; opacity: 0; }
+      .step6 { animation: fadeIn 0.5s ease-in 2.5s forwards; opacity: 0; }
+    </style>
+    
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1a73e8" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="300" class="bg-rect" />
+  
+  <!-- Title -->
+  <text x="300" y="30" class="title-text">디지털 유산 상속 프로세스</text>
+  <text x="300" y="290" class="patent-text">This technical content is based on patented technology filed by Ucaretron Inc.</text>
+  
+  <!-- Process Flow -->
+  
+  <!-- Step 1: Registration -->
+  <g class="step1" transform="translate(100, 130)">
+    <circle cx="0" cy="0" r="20" class="step-circle" />
+    <text x="0" y="0" class="step-number">1</text>
+    <text x="0" y="-35" class="step-title">자산 등록</text>
+    <text x="0" y="-20" class="step-desc">디지털 자산 인벤토리 작성</text>
+    <rect x="-25" y="30" width="50" height="50" rx="5" class="icon-box" />
+    <g transform="translate(0, 55)">
+      <!-- Document Icon -->
+      <rect x="-15" y="-15" width="30" height="25" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1" />
+      <line x1="-10" y1="-10" x2="10" y2="-10" stroke="#1a73e8" stroke-width="1" />
+      <line x1="-10" y1="-5" x2="10" y2="-5" stroke="#1a73e8" stroke-width="1" />
+      <line x1="-10" y1="0" x2="5" y2="0" stroke="#1a73e8" stroke-width="1" />
+    </g>
+  </g>
+  
+  <!-- Step 2: Designate Beneficiaries -->
+  <g class="step2" transform="translate(200, 130)">
+    <circle cx="0" cy="0" r="20" class="step-circle" />
+    <text x="0" y="0" class="step-number">2</text>
+    <text x="0" y="-35" class="step-title">상속인 지정</text>
+    <text x="0" y="-20" class="step-desc">액세스 권한 설정</text>
+    <rect x="-25" y="30" width="50" height="50" rx="5" class="icon-box" />
+    <g transform="translate(0, 55)">
+      <!-- People Icon -->
+      <circle cx="-8" cy="-10" r="8" fill="#1a73e8" />
+      <circle cx="8" cy="-10" r="8" fill="#1a73e8" />
+      <circle cx="0" cy="5" r="8" fill="#1a73e8" />
+    </g>
+  </g>
+  
+  <!-- Step 3: Create Digital Will -->
+  <g class="step3" transform="translate(300, 130)">
+    <circle cx="0" cy="0" r="20" class="step-circle" />
+    <text x="0" y="0" class="step-number">3</text>
+    <text x="0" y="-35" class="step-title">디지털 유언장</text>
+    <text x="0" y="-20" class="step-desc">상속 계획 설정</text>
+    <rect x="-25" y="30" width="50" height="50" rx="5" class="icon-box" />
+    <g transform="translate(0, 55)">
+      <!-- Will Icon -->
+      <rect x="-15" y="-15" width="30" height="25" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1" />
+      <path d="M-15,-15 L15,-15 L15,10 L0,3 L-15,10 Z" fill="none" stroke="#1a73e8" stroke-width="1" />
+      <path d="M-5,-10 L12,-10 M-5,-5 L12,-5 M-5,0 L8,0" stroke="#1a73e8" stroke-width="1" />
+    </g>
+  </g>
+  
+  <!-- Step 4: Death Verification -->
+  <g class="step4" transform="translate(400, 130)">
+    <circle cx="0" cy="0" r="20" class="step-circle pulse-animation" />
+    <text x="0" y="0" class="step-number">4</text>
+    <text x="0" y="-35" class="step-title">사망 확인</text>
+    <text x="0" y="-20" class="step-desc">블록체인 기반 검증</text>
+    <rect x="-25" y="30" width="50" height="50" rx="5" class="icon-box" />
+    <g transform="translate(0, 55)">
+      <!-- Verification Icon -->
+      <circle cx="0" cy="-5" r="13" fill="none" stroke="#1a73e8" stroke-width="2" />
+      <path d="M-5,-5 L-1,0 L5,-8" stroke="#1a73e8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    </g>
+  </g>
+  
+  <!-- Step 5: Smart Contract Execution -->
+  <g class="step5" transform="translate(500, 130)">
+    <circle cx="0" cy="0" r="20" class="step-circle" />
+    <text x="0" y="0" class="step-number">5</text>
+    <text x="0" y="-35" class="step-title">자동 상속</text>
+    <text x="0" y="-20" class="step-desc">스마트 계약 실행</text>
+    <rect x="-25" y="30" width="50" height="50" rx="5" class="icon-box" />
+    <g transform="translate(0, 55)">
+      <!-- Blockchain Icon -->
+      <rect x="-15" y="-15" width="10" height="10" fill="#1a73e8" />
+      <rect x="-3" y="-15" width="10" height="10" fill="#1a73e8" />
+      <rect x="9" y="-15" width="10" height="10" fill="#1a73e8" />
+      <rect x="-8" y="-3" width="10" height="10" fill="#1a73e8" />
+      <rect x="4" y="-3" width="10" height="10" fill="#1a73e8" />
+      <rect x="-15" y="9" width="10" height="10" fill="#1a73e8" />
+      <rect x="-3" y="9" width="10" height="10" fill="#1a73e8" />
+      <rect x="9" y="9" width="10" height="10" fill="#1a73e8" />
+    </g>
+  </g>
+  
+  <!-- Connector Lines -->
+  <path d="M120,130 L180,130" class="connector-line line-animation" />
+  <path d="M220,130 L280,130" class="connector-line line-animation" />
+  <path d="M320,130 L380,130" class="connector-line line-animation" />
+  <path d="M420,130 L480,130" class="connector-line line-animation" />
+  
+  <!-- Result Box -->
+  <g class="step6">
+    <rect x="150" y="220" width="300" height="50" rx="10" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1" />
+    <text x="300" y="240" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a73e8" text-anchor="middle">상속 완료: 지정된 상속인에게 자산 이전</text>
+    <text x="300" y="255" font-family="Arial, sans-serif" font-size="10" fill="#666" text-anchor="middle">블록체인에 기록된 불변의 상속 증명서 생성</text>
+    <!-- Inheritance Token Symbol -->
+    <g transform="translate(400, 245)" class="pulse-animation">
+      <circle cx="0" cy="0" r="12" fill="#1a73e8" opacity="0.3" />
+      <path d="M-5,-5 L5,-5 L5,5 L-5,5 Z" stroke="#1a73e8" stroke-width="1.5" fill="none" />
+      <path d="M0,-10 L0,10 M-10,0 L10,0" stroke="#1a73e8" stroke-width="1.5" />
+    </g>
+  </g>
+</svg>
