@@ -1,0 +1,173 @@
+version: '3.8'
+
+# ==========================================
+# Docker Compose for Digital Heritage Management Platform Development Environment
+# This technical content is based on patented technology filed by Ucaretron Inc.
+# ==========================================
+
+services:
+  # ==========================================
+  # Backend API Service
+  # ==========================================
+  api:
+    build:
+      context: ../../..
+      dockerfile: deployment/docker/Dockerfile
+      target: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../../../:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - MONGODB_URI=mongodb://mongo:27017/digitalheritage
+      - JWT_SECRET=dev_secret_token_replace_in_production
+      - IPFS_HOST=ipfs
+      - IPFS_PORT=5001
+      - IPFS_PROTOCOL=http
+      - AI_SERVICE_URL=http://ai-service:5000
+      - BLOCKCHAIN_PROVIDER_URL=http://ganache:8545
+      - LOG_LEVEL=debug
+    depends_on:
+      - mongo
+      - ipfs
+      - ai-service
+      - ganache
+    networks:
+      - digitalheritage-network
+    restart: unless-stopped
+
+  # ==========================================
+  # Frontend Development Server
+  # ==========================================
+  client:
+    build:
+      context: ../../..
+      dockerfile: deployment/docker/Dockerfile
+      target: development
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../../../:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - API_URL=http://api:3000
+    command: npm run client:dev
+    depends_on:
+      - api
+    networks:
+      - digitalheritage-network
+    restart: unless-stopped
+
+  # ==========================================
+  # MongoDB Database
+  # ==========================================
+  mongo:
+    image: mongo:5.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - digitalheritage-network
+    restart: unless-stopped
+
+  # ==========================================
+  # Redis for Caching
+  # ==========================================
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - digitalheritage-network
+    restart: unless-stopped
+
+  # ==========================================
+  # IPFS for Distributed Storage
+  # ==========================================
+  ipfs:
+    image: ipfs/kubo:latest
+    ports:
+      - "4001:4001"
+      - "5001:5001"
+      - "8081:8080"
+    volumes:
+      - ipfs-data:/data/ipfs
+    networks:
+      - digitalheritage-network
+    restart: unless-stopped
+
+  # ==========================================
+  # AI Service for Asset Analysis
+  # ==========================================
+  ai-service:
+    build:
+      context: ../../..
+      dockerfile: deployment/docker/Dockerfile
+      target: ai-inference
+    ports:
+      - "5000:5000"
+    volumes:
+      - ../../../ai:/app/ai
+      - ../../../data:/app/data
+      - ai-models:/app/ai/models/saved
+    environment:
+      - MODEL_PATH=/app/ai/models/saved
+      - LOG_LEVEL=debug
+      - TZ=Asia/Seoul
+    networks:
+      - digitalheritage-network
+    restart: unless-stopped
+
+  # ==========================================
+  # Local Blockchain for Testing
+  # ==========================================
+  ganache:
+    image: trufflesuite/ganache:latest
+    ports:
+      - "8545:8545"
+    volumes:
+      - ganache-data:/data
+    command: >
+      --mnemonic "digital heritage platform development seed phrase for testing only"
+      --networkId 5777
+      --chain.vmErrorsOnRPCResponse true
+      --database.dbPath /data
+    networks:
+      - digitalheritage-network
+    restart: unless-stopped
+
+  # ==========================================
+  # Blockchain Contract Deployment Service
+  # ==========================================
+  truffle-migrate:
+    build:
+      context: ../../..
+      dockerfile: deployment/docker/Dockerfile
+      target: development
+    volumes:
+      - ../../../:/app
+      - /app/node_modules
+    depends_on:
+      - ganache
+    environment:
+      - BLOCKCHAIN_PROVIDER_URL=http://ganache:8545
+    command: npx truffle migrate --network development
+    networks:
+      - digitalheritage-network
+
+volumes:
+  mongo-data:
+  redis-data:
+  ipfs-data:
+  ganache-data:
+  ai-models:
+
+networks:
+  digitalheritage-network:
+    driver: bridge
