@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <style>
+      .bg {
+        fill: #f9f9f9;
+      }
+      
+      .layer {
+        filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.2));
+      }
+      
+      .title-text {
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        fill: #333;
+        text-anchor: middle;
+      }
+      
+      .layer-title {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        fill: white;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+      
+      .layer-item {
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        fill: #333;
+        text-anchor: middle;
+      }
+      
+      .patent-text {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        font-style: italic;
+        fill: #666;
+        text-anchor: middle;
+      }
+      
+      @keyframes floatLayer1 {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+        100% { transform: translateY(0); }
+      }
+      
+      @keyframes floatLayer2 {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-7px); }
+        100% { transform: translateY(0); }
+      }
+      
+      @keyframes floatLayer3 {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+      }
+      
+      @keyframes floatLayer4 {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+        100% { transform: translateY(0); }
+      }
+      
+      @keyframes floatLayer5 {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-6px); }
+        100% { transform: translateY(0); }
+      }
+      
+      @keyframes floatLayer6 {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+        100% { transform: translateY(0); }
+      }
+      
+      .layer1 {
+        animation: floatLayer1 4s ease-in-out infinite;
+      }
+      
+      .layer2 {
+        animation: floatLayer2 5s ease-in-out infinite;
+      }
+      
+      .layer3 {
+        animation: floatLayer3 6s ease-in-out infinite;
+      }
+      
+      .layer4 {
+        animation: floatLayer4 5.5s ease-in-out infinite;
+      }
+      
+      .layer5 {
+        animation: floatLayer5 4.5s ease-in-out infinite;
+      }
+      
+      .layer6 {
+        animation: floatLayer6 4s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" class="bg" />
+  
+  <!-- Title -->
+  <text x="300" y="40" class="title-text">디지털 유산 관리 플랫폼 기술 스택</text>
+  
+  <!-- Stack Layers - FROM BOTTOM TO TOP -->
+  
+  <!-- Layer 6: Infrastructure -->
+  <g class="layer6 layer" transform="translate(300, 350)">
+    <rect x="-250" y="-20" width="500" height="40" rx="5" fill="#78909c" />
+    <text x="0" y="0" class="layer-title">인프라</text>
+    <text x="-170" y="-30" class="layer-item">Docker/Kubernetes</text>
+    <text x="-50" y="-30" class="layer-item">AWS/GCP 클라우드</text>
+    <text x="70" y="-30" class="layer-item">CI/CD 파이프라인</text>
+    <text x="190" y="-30" class="layer-item">서버리스 아키텍처</text>
+  </g>
+  
+  <!-- Layer 5: Security -->
+  <g class="layer5 layer" transform="translate(300, 290)">
+    <rect x="-250" y="-20" width="500" height="40" rx="5" fill="#e53935" />
+    <text x="0" y="0" class="layer-title">보안</text>
+    <text x="-170" y="-30" class="layer-item">다중 요소 인증</text>
+    <text x="-50" y="-30" class="layer-item">엔드-투-엔드 암호화</text>
+    <text x="70" y="-30" class="layer-item">동형 암호화</text>
+    <text x="190" y="-30" class="layer-item">생체 인증</text>
+  </g>
+  
+  <!-- Layer 4: Blockchain -->
+  <g class="layer4 layer" transform="translate(300, 230)">
+    <rect x="-250" y="-20" width="500" height="40" rx="5" fill="#fb8c00" />
+    <text x="0" y="0" class="layer-title">블록체인</text>
+    <text x="-170" y="-30" class="layer-item">Ethereum/Solidity</text>
+    <text x="-50" y="-30" class="layer-item">ERC-721/ERC-1155</text>
+    <text x="70" y="-30" class="layer-item">영지식 증명</text>
+    <text x="190" y="-30" class="layer-item">스마트 계약</text>
+  </g>
+  
+  <!-- Layer 3: AI -->
+  <g class="layer3 layer" transform="translate(300, 170)">
+    <rect x="-250" y="-20" width="500" height="40" rx="5" fill="#43a047" />
+    <text x="0" y="0" class="layer-title">AI 및 머신러닝</text>
+    <text x="-170" y="-30" class="layer-item">TensorFlow/PyTorch</text>
+    <text x="-50" y="-30" class="layer-item">자연어 처리</text>
+    <text x="70" y="-30" class="layer-item">컴퓨터 비전</text>
+    <text x="190" y="-30" class="layer-item">강화 학습</text>
+  </g>
+  
+  <!-- Layer 2: Database -->
+  <g class="layer2 layer" transform="translate(300, 110)">
+    <rect x="-250" y="-20" width="500" height="40" rx="5" fill="#1e88e5" />
+    <text x="0" y="0" class="layer-title">데이터베이스</text>
+    <text x="-170" y="-30" class="layer-item">MongoDB</text>
+    <text x="-50" y="-30" class="layer-item">Redis</text>
+    <text x="70" y="-30" class="layer-item">IPFS</text>
+    <text x="190" y="-30" class="layer-item">GraphQL</text>
+  </g>
+  
+  <!-- Layer 1: Frontend/Backend -->
+  <g class="layer1 layer" transform="translate(300, 60)">
+    <rect x="-250" y="-20" width="500" height="40" rx="5" fill="#8e24aa" />
+    <text x="0" y="0" class="layer-title">프론트엔드/백엔드</text>
+    <text x="-170" y="-30" class="layer-item">React/Next.js</text>
+    <text x="-50" y="-30" class="layer-item">Node.js/Express</text>
+    <text x="70" y="-30" class="layer-item">TypeScript</text>
+    <text x="190" y="-30" class="layer-item">Three.js/Web3.js</text>
+  </g>
+  
+  <!-- Patent Notice -->
+  <text x="300" y="390" class="patent-text">This technical content is based on patented technology filed by Ucaretron Inc.</text>
+</svg>
