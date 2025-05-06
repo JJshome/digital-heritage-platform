@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="300" viewBox="0 0 500 300">
+  <defs>
+    <style>
+      .bg-rect {
+        fill: #f9f9f9;
+        stroke: #eee;
+        stroke-width: 1;
+      }
+      
+      .person {
+        fill: #ddd;
+        stroke: #666;
+        stroke-width: 1;
+      }
+      
+      .digital-item {
+        filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.3));
+      }
+      
+      .folder {
+        fill: #ffca28;
+        stroke: #f57c00;
+        stroke-width: 1;
+      }
+      
+      .document {
+        fill: #fff;
+        stroke: #aaa;
+        stroke-width: 1;
+      }
+      
+      .photo {
+        fill: #81c784;
+        stroke: #388e3c;
+        stroke-width: 1;
+      }
+      
+      .social {
+        fill: #64b5f6;
+        stroke: #1976d2;
+        stroke-width: 1;
+      }
+      
+      .crypto {
+        fill: #f48fb1;
+        stroke: #d81b60;
+        stroke-width: 1;
+      }
+      
+      .cloud {
+        fill: #b39ddb;
+        stroke: #512da8;
+        stroke-width: 1;
+      }
+      
+      .asset-text {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        fill: #333;
+        text-anchor: middle;
+        dominant-baseline: middle;
+      }
+      
+      .title-text {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        fill: #333;
+        text-anchor: middle;
+      }
+      
+      .subtitle-text {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        font-style: italic;
+        fill: #666;
+        text-anchor: middle;
+      }
+      
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      
+      .float-animation {
+        animation: float 4s ease-in-out infinite;
+      }
+      
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+      }
+      
+      .pulse-animation {
+        animation: pulse 3s ease-in-out infinite;
+      }
+      
+      @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      .rotate-animation {
+        animation: rotate 10s linear infinite;
+      }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="500" height="300" class="bg-rect" />
+  
+  <!-- Title -->
+  <text x="250" y="30" class="title-text">디지털 유산 관리</text>
+  <text x="250" y="50" class="subtitle-text">현대인의 소중한 디지털 자산을 보호하고 전승합니다</text>
+  
+  <!-- Person -->
+  <g transform="translate(250, 160)">
+    <!-- Body -->
+    <circle cx="0" cy="-30" r="25" class="person" />
+    <rect x="-20" y="-5" width="40" height="60" rx="10" class="person" />
+    
+    <!-- Digital Assets Cloud -->
+    <g class="float-animation" transform="translate(0, -120)">
+      <ellipse cx="0" cy="0" rx="120" ry="60" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1" stroke-dasharray="5,3" />
+      
+      <!-- Digital Asset Items -->
+      <g class="digital-item" transform="translate(-70, -20)">
+        <rect width="30" height="40" rx="2" class="document" />
+        <line x1="5" y1="10" x2="25" y2="10" stroke="#999" stroke-width="1" />
+        <line x1="5" y1="15" x2="25" y2="15" stroke="#999" stroke-width="1" />
+        <line x1="5" y1="20" x2="15" y2="20" stroke="#999" stroke-width="1" />
+        <text x="15" y="35" class="asset-text">문서</text>
+      </g>
+      
+      <g class="digital-item pulse-animation" transform="translate(-25, -30)">
+        <rect width="35" height="35" rx="5" class="photo" />
+        <circle cx="25" cy="15" r="5" fill="white" />
+        <rect x="10" y="10" width="15" height="10" fill="white" />
+        <text x="17.5" y="30" class="asset-text">사진</text>
+      </g>
+      
+      <g class="digital-item" transform="translate(25, -25)">
+        <circle r="20" class="social" />
+        <text x="0" y="0" class="asset-text">소셜</text>
+        <text x="0" y="10" class="asset-text">미디어</text>
+      </g>
+      
+      <g class="digital-item rotate-animation" transform="translate(70, -10)">
+        <circle r="18" class="crypto" />
+        <text x="0" y="0" class="asset-text">암호</text>
+        <text x="0" y="10" class="asset-text">화폐</text>
+      </g>
+      
+      <g class="digital-item" transform="translate(-60, 20)">
+        <path d="M0,0 L30,0 L30,25 L15,15 L0,25 Z" class="folder" />
+        <text x="15" y="10" class="asset-text">파일</text>
+      </g>
+      
+      <g class="digital-item float-animation" transform="translate(0, 25)">
+        <path d="M0,-10 Q20,-30 40,-10 Q60,10 40,30 Q20,50 0,30 Q-20,10 0,-10 Z" class="cloud" />
+        <text x="20" y="15" class="asset-text">클라우드</text>
+      </g>
+      
+      <g class="digital-item" transform="translate(60, 15)">
+        <rect width="30" height="20" rx="5" class="document" />
+        <rect x="5" y="-5" width="20" height="10" rx="2" class="document" />
+        <text x="15" y="15" class="asset-text">계정</text>
+      </g>
+    </g>
+    
+    <!-- Connection Lines -->
+    <line x1="0" y1="-30" x2="0" y2="-60" stroke="#1a73e8" stroke-width="2" stroke-dasharray="5,3" />
+    
+    <!-- Shield Protection -->
+    <g transform="translate(0, 0)" class="pulse-animation">
+      <path d="M0,-80 L40,-60 V-20 C40,20 0,40 0,40 C0,40 -40,20 -40,-20 V-60 Z" fill="#1a73e8" fill-opacity="0.2" stroke="#1a73e8" stroke-width="2" />
+      <text x="0" y="-30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a73e8" text-anchor="middle">보호</text>
+    </g>
+  </g>
+  
+  <!-- Inheritance Arrow -->
+  <g transform="translate(250, 240)">
+    <text x="0" y="-15" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">유산 상속</text>
+    <path d="M-100,0 H100" stroke="#1a73e8" stroke-width="2" />
+    <path d="M80,0 L100,0 L90,10 M100,0 L90,-10" stroke="#1a73e8" stroke-width="2" fill="none" />
+  </g>
+  
+  <!-- Beneficiaries -->
+  <g transform="translate(130, 240)">
+    <circle cx="0" cy="25" r="15" class="person" />
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">가족</text>
+  </g>
+  
+  <g transform="translate(180, 240)">
+    <circle cx="0" cy="25" r="15" class="person" />
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">친구</text>
+  </g>
+  
+  <g transform="translate(320, 240)">
+    <circle cx="0" cy="25" r="15" class="person" />
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">재단</text>
+  </g>
+  
+  <g transform="translate(370, 240)">
+    <circle cx="0" cy="25" r="15" class="person" />
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">단체</text>
+  </g>
+  
+  <!-- Patent Notice -->
+  <text x="250" y="290" font-family="Arial, sans-serif" font-size="8" font-style="italic" fill="#666" text-anchor="middle">This technical content is based on patented technology filed by Ucaretron Inc.</text>
+</svg>
