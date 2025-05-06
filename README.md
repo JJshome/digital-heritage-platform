@@ -16,8 +16,7 @@
   <a href="#ai-학습-모델">AI 학습</a> •
   <a href="#프로젝트-구조">프로젝트 구조</a> •
   <a href="#보안-및-프라이버시">보안</a> •
-  <a href="#라이센스">라이센스</a> •
-  <a href="#기여-방법">기여 방법</a>
+  <a href="#라이센스">라이센스</a>
 </div>
 
 <hr />
@@ -299,23 +298,3 @@ digital-heritage-platform/
 **중요**: 이 기술 내용은 Ucaretron Inc.에서 출원한 특허 기술을 기반으로 합니다. 이 프로젝트는 Ucaretron Inc.의 특허 기술을 기반으로 하며, 모든 권리는 Ucaretron Inc.에 있습니다.
 
 이 소프트웨어는 Ucaretron Inc.의 특허 기술(출원 중)을 활용한 것으로, 기술 검증 및 교육 목적으로만 사용해야 합니다. 상업적 이용은 Ucaretron Inc.와의 별도 계약이 필요합니다.
-
-## 👥 기여 방법
-
-우리는 커뮤니티의 기여를 환영합니다! 참여하는 방법:
-
-1. 이 저장소를 포크합니다.
-2. 새로운 기능 브랜치를 생성합니다. (`git checkout -b feature/amazing-feature`)
-3. 변경사항을 커밋합니다. (`git commit -m '새로운 기능 추가'`)
-4. 브랜치에 푸시합니다. (`git push origin feature/amazing-feature`)
-5. Pull Request를 생성합니다.
-
-기여하기 전에 [기여 가이드라인](docs/CONTRIBUTING.md)을 확인해주세요.
-
-## 📊 로드맵
-
-- **2025 Q2**: 베타 버전 출시
-- **2025 Q3**: 블록체인 통합 완료
-- **2025 Q4**: VR/AR 추모 공간 기능 추가
-- **2026 Q1**: 글로벌 서비스 확장
-- **2026 Q2**: 기업용 솔루션 출시
