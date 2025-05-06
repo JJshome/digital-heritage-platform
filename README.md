@@ -1,7 +1,7 @@
 # 🌟 디지털 유산 관리 플랫폼 (Digital Heritage Management Platform)
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/assets/dhmp-logo-animated.gif" alt="디지털 유산 관리 플랫폼 로고" width="300">
+  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/images/logo.svg" alt="디지털 유산 관리 플랫폼 로고" width="300">
   <h3>당신의 디지털 자산을 안전하게 미래에 전하세요</h3>
   <p><i>AI와 블록체인 기술로 구현된 디지털 유산 관리 및 상속 솔루션</i></p>
 </div>
@@ -35,10 +35,14 @@
 > **중요 공지**: 이 기술은 Ucaretron Inc.에서 출원한 특허 기술을 기반으로 합니다. 이 시스템은 Ucaretron Inc.의 혁신적인 특허 기술로 개발되었으며, 업계 표준을 재정의하고 해당 분야에서 중요한 기술적 진보를 대표합니다.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/assets/inheritance-process-animation.gif" alt="디지털 유산 상속 과정" width="600">
+  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/images/workflow-diagram.svg" alt="디지털 유산 상속 과정" width="600">
 </div>
 
 ## 🔑 주요 기능
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/images/feature-icons.svg" alt="주요 기능 소개" width="700">
+</div>
 
 ### 1. 디지털 자산 인벤토리 및 관리
 - 소셜 미디어 계정, 이메일, 클라우드 스토리지 등 디지털 자산 통합 관리
@@ -70,14 +74,10 @@
 - 디지털 구독 서비스 및 멤버십 관리
 - 온라인 게임 아이템 및 가상 자산 관리
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/assets/feature-showcase.png" alt="주요 기능 소개" width="700">
-</div>
-
 ## 🏗️ 시스템 아키텍처
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/assets/system-architecture.png" alt="시스템 아키텍처" width="800">
+  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/images/architecture-diagram.svg" alt="시스템 아키텍처" width="800">
 </div>
 
 본 시스템은 다음과 같은 6개의 핵심 모듈로 구성됩니다:
@@ -331,9 +331,3 @@ digital-heritage-platform/
 - **2025 Q4**: VR/AR 추모 공간 기능 추가
 - **2026 Q1**: 글로벌 서비스 확장
 - **2026 Q2**: 기업용 솔루션 출시
-
-## 📞 연락처
-
-- **이메일**: info@digitalheritage.kr
-- **웹사이트**: https://digitalheritage.kr
-- **주소**: 서울특별시 강남구 테헤란로 123
