@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <style>
+      .module {
+        fill: #f0f7ff;
+        stroke: #1a73e8;
+        stroke-width: 2;
+        rx: 10;
+        ry: 10;
+      }
+      
+      .module-title {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        fill: #1a73e8;
+      }
+      
+      .module-desc {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        fill: #666;
+      }
+      
+      .connection {
+        fill: none;
+        stroke: #1a73e8;
+        stroke-width: 2;
+        stroke-dasharray: 5 3;
+        marker-end: url(#arrowhead);
+      }
+      
+      .connection-solid {
+        fill: none;
+        stroke: #1a73e8;
+        stroke-width: 2;
+        marker-end: url(#arrowhead);
+      }
+      
+      .group {
+        fill: #f9f9f9;
+        stroke: #ccc;
+        stroke-width: 1;
+        rx: 20;
+        ry: 20;
+      }
+      
+      .group-title {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        fill: #333;
+      }
+      
+      .patent-notice {
+        font-family: Arial, sans-serif;
+        font-size: 10px;
+        font-style: italic;
+        fill: #666;
+      }
+      
+      @keyframes pulse {
+        0% { opacity: 0.7; }
+        50% { opacity: 1; }
+        100% { opacity: 0.7; }
+      }
+      
+      .highlight {
+        animation: pulse 2s ease-in-out infinite;
+      }
+      
+      @keyframes dash {
+        from { stroke-dashoffset: 20; }
+        to { stroke-dashoffset: 0; }
+      }
+      
+      .animated-connection {
+        animation: dash 1s linear infinite;
+      }
+    </style>
+    
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1a73e8" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#333" text-anchor="middle">AI 및 블록체인 기반 디지털 유산 관리 플랫폼</text>
+  <text x="400" y="65" font-family="Arial, sans-serif" font-size="14" fill="#666" text-anchor="middle">시스템 아키텍처</text>
+  
+  <!-- Patent Notice -->
+  <text x="400" y="580" class="patent-notice" text-anchor="middle">This technical content is based on patented technology filed by Ucaretron Inc.</text>
+  
+  <!-- Main System Groups -->
+  <rect x="50" y="100" width="700" height="450" class="group" />
+  <text x="70" y="125" class="group-title">디지털 유산 관리 플랫폼</text>
+  
+  <!-- Core Modules -->
+  
+  <!-- Module 1: Data Collection -->
+  <rect x="100" y="150" width="160" height="120" class="module highlight" />
+  <text x="180" y="175" class="module-title" text-anchor="middle">데이터 수집 및 관리 모듈</text>
+  <text x="180" y="195" class="module-desc" text-anchor="middle">멀티모달 데이터 수집</text>
+  <text x="180" y="215" class="module-desc" text-anchor="middle">실시간 동기화</text>
+  <text x="180" y="235" class="module-desc" text-anchor="middle">데이터 표준화</text>
+  <text x="180" y="255" class="module-desc" text-anchor="middle">데이터 암호화</text>
+  
+  <!-- Module 2: AI Analysis -->
+  <rect x="320" y="150" width="160" height="120" class="module highlight" />
+  <text x="400" y="175" class="module-title" text-anchor="middle">AI 기반 자산 분석 모듈</text>
+  <text x="400" y="195" class="module-desc" text-anchor="middle">자연어 처리</text>
+  <text x="400" y="215" class="module-desc" text-anchor="middle">컴퓨터 비전</text>
+  <text x="400" y="235" class="module-desc" text-anchor="middle">감정 분석</text>
+  <text x="400" y="255" class="module-desc" text-anchor="middle">자산 분류 및 태깅</text>
+  
+  <!-- Module 3: Blockchain Management -->
+  <rect x="540" y="150" width="160" height="120" class="module highlight" />
+  <text x="620" y="175" class="module-title" text-anchor="middle">블록체인 기반 상속 관리</text>
+  <text x="620" y="195" class="module-desc" text-anchor="middle">디지털 자산 토큰화</text>
+  <text x="620" y="215" class="module-desc" text-anchor="middle">스마트 계약 생성</text>
+  <text x="620" y="235" class="module-desc" text-anchor="middle">다중 서명 인증</text>
+  <text x="620" y="255" class="module-desc" text-anchor="middle">상속 실행 자동화</text>
+  
+  <!-- Module 4: Digital Memorial -->
+  <rect x="100" y="310" width="160" height="120" class="module highlight" />
+  <text x="180" y="335" class="module-title" text-anchor="middle">디지털 추모 공간 생성</text>
+  <text x="180" y="355" class="module-desc" text-anchor="middle">3D 모델링</text>
+  <text x="180" y="375" class="module-desc" text-anchor="middle">추억 시각화</text>
+  <text x="180" y="395" class="module-desc" text-anchor="middle">인터랙티브 요소</text>
+  <text x="180" y="415" class="module-desc" text-anchor="middle">접근 권한 관리</text>
+  
+  <!-- Module 5: Security -->
+  <rect x="320" y="310" width="160" height="120" class="module highlight" />
+  <text x="400" y="335" class="module-title" text-anchor="middle">보안 및 프라이버시 보호</text>
+  <text x="400" y="355" class="module-desc" text-anchor="middle">다중 요소 인증</text>
+  <text x="400" y="375" class="module-desc" text-anchor="middle">데이터 암호화</text>
+  <text x="400" y="395" class="module-desc" text-anchor="middle">접근 제어</text>
+  <text x="400" y="415" class="module-desc" text-anchor="middle">보안 감사</text>
+  
+  <!-- Module 6: User Interface -->
+  <rect x="540" y="310" width="160" height="120" class="module highlight" />
+  <text x="620" y="335" class="module-title" text-anchor="middle">사용자 인터페이스 모듈</text>
+  <text x="620" y="355" class="module-desc" text-anchor="middle">대시보드</text>
+  <text x="620" y="375" class="module-desc" text-anchor="middle">음성 및 제스처 인터페이스</text>
+  <text x="620" y="395" class="module-desc" text-anchor="middle">개인화된 UI</text>
+  <text x="620" y="415" class="module-desc" text-anchor="middle">다국어 지원</text>
+  
+  <!-- Connections -->
+  <!-- Data Collection to AI Analysis -->
+  <path d="M260,200 L320,200" class="connection-solid animated-connection" />
+  
+  <!-- AI Analysis to Blockchain -->
+  <path d="M480,200 L540,200" class="connection-solid animated-connection" />
+  
+  <!-- Blockchain to Digital Memorial -->
+  <path d="M580,270 L500,310" class="connection animated-connection" />
+  
+  <!-- Digital Memorial to User Interface -->
+  <path d="M260,370 L320,370" class="connection-solid animated-connection" />
+  
+  <!-- Security to User Interface -->
+  <path d="M480,370 L540,370" class="connection-solid animated-connection" />
+  
+  <!-- Data Collection to Security -->
+  <path d="M180,270 L180,290 L400,290 L400,310" class="connection animated-connection" />
+  
+  <!-- AI Analysis to User Interface -->
+  <path d="M400,270 L400,290 L620,290 L620,310" class="connection animated-connection" />
+  
+  <!-- External Components -->
+  <rect x="100" y="470" width="600" height="50" fill="#f0f7ff" stroke="#1a73e8" stroke-width="1" rx="5" ry="5" />
+  <text x="400" y="500" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a73e8" text-anchor="middle">기반 기술: 초고속 통신, 엣지 AI, 프라이버시 보호, 분산 스토리지, VR/AR</text>
+</svg>
