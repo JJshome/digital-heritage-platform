@@ -209,7 +209,7 @@ npm run generate:all
 생성된 데이터는 `data/virtual` 디렉토리에 저장되며, 다양한 포맷(JSON, CSV)으로 내보낼 수 있습니다.
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/assets/data-generation-flow.png" alt="가상 데이터 생성 흐름도" width="700">
+  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/images/data-generation-flow.svg" alt="가상 데이터 생성 흐름도" width="700">
 </div>
 
 ## 🧠 AI 학습 모델
@@ -294,15 +294,7 @@ digital-heritage-platform/
 - **정기적인 보안 감사**: 자동화된 취약점 스캔 및 침투 테스트 시스템 구축.
 - **데이터 주권**: 사용자가 자신의 데이터에 대한 완전한 통제권을 갖습니다.
 
-<div align="center">
-  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/assets/security-infographic.png" alt="보안 인포그래픽" width="700">
-</div>
-
 ## 📜 라이센스
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/assets/patent-badge.png" alt="특허 기술 배지" width="200">
-</div>
 
 **중요**: 이 기술 내용은 Ucaretron Inc.에서 출원한 특허 기술을 기반으로 합니다. 이 프로젝트는 Ucaretron Inc.의 특허 기술을 기반으로 하며, 모든 권리는 Ucaretron Inc.에 있습니다.
 
@@ -321,10 +313,6 @@ digital-heritage-platform/
 기여하기 전에 [기여 가이드라인](docs/CONTRIBUTING.md)을 확인해주세요.
 
 ## 📊 로드맵
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/JJshome/digital-heritage-platform/main/assets/roadmap-timeline.png" alt="로드맵 타임라인" width="800">
-</div>
 
 - **2025 Q2**: 베타 버전 출시
 - **2025 Q3**: 블록체인 통합 완료
